@@ -7,7 +7,7 @@ app = FastAPI()
 tokenizer = AutoTokenizer.from_pretrained("naver/splade-cocondenser-selfdistil")
 model = AutoModelForMaskedLM.from_pretrained("naver/splade-cocondenser-selfdistil")
 
-@app.post("/run")
+@app.post("/sparse-embeddings")
 async def sparse_embedding(request: Request):
     data = await request.json()
     text = data["input"]
